@@ -1,7 +1,10 @@
+import { HeaderContainer } from './style'
+import LogoSrc from '../../assets/LogoHeader.svg'
+
 export function Header() {
   return (
-    <>
-      <h1>Header</h1>
-    </>
+    <HeaderContainer>
+      <img src={LogoSrc} alt="CodeLogo" />
+    </HeaderContainer>
   )
 }
