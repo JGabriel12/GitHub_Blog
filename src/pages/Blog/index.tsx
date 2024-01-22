@@ -1,8 +1,9 @@
+import { Profile } from './components/Profile'
+
 export function Blog() {
   return (
-    <>
-      <h1>Hello, world!</h1>
-      <h1>APP TEST</h1>
-    </>
+    <div className="container">
+      <Profile />
+    </div>
   )
 }
