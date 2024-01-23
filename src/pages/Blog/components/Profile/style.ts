@@ -40,15 +40,6 @@ export const ProfileDescription = styled.div`
       font-weight: 700;
       line-height: 130%;
     }
-
-    a {
-      color: ${({ theme }) => theme.colors.blue};
-      font-size: ${({ theme }) => theme.textSizes['text-bold-s']};
-
-      font-weight: 700;
-      line-height: 160%;
-      text-transform: uppercase;
-    }
   }
 
   p {

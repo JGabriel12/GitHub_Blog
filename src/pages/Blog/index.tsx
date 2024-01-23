@@ -5,7 +5,7 @@ import { PostsListContainer } from './style'
 
 export function Blog() {
   return (
-    <div className="container">
+    <>
       <Profile />
       <SearchInput />
       <PostsListContainer>
@@ -16,6 +16,6 @@ export function Blog() {
         <IssuePost />
         <IssuePost />
       </PostsListContainer>
-    </div>
+    </>
   )
 }

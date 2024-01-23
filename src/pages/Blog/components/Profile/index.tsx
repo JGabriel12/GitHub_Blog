@@ -1,6 +1,7 @@
 import { ProfileContainer, ProfileDescription, ProfilePicture } from './style'
 import AvatarImage from '../../../../assets/avatar.svg'
-import { ArrowLineUpRight, Buildings, GithubLogo, Users } from 'phosphor-react'
+import { Buildings, GithubLogo, Users } from 'phosphor-react'
+import { ExternalLink } from '../../../../components/ExternalLink'
 
 export function Profile() {
   return (
@@ -9,9 +10,10 @@ export function Profile() {
       <ProfileDescription>
         <header>
           <h1>Cameron Williamson</h1>
-          <a href="#">
-            GITHUB <ArrowLineUpRight weight="fill" />
-          </a>
+
+          <div>
+            <ExternalLink text="github" href="#" />
+          </div>
         </header>
 
         <p>

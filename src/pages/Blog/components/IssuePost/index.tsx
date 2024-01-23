@@ -2,7 +2,7 @@ import { IssuePostContainer } from './style'
 
 export function IssuePost() {
   return (
-    <IssuePostContainer to={'/Issue'}>
+    <IssuePostContainer to={'/Issue/1'}>
       <div>
         <strong>JavaScript data types and data structures</strong>
         <span>Há 1 dia</span>
