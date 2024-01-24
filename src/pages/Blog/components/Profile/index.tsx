@@ -1,36 +1,64 @@
 import { ProfileContainer, ProfileDescription, ProfilePicture } from './style'
-import AvatarImage from '../../../../assets/avatar.svg'
 import { Buildings, GithubLogo, Users } from 'phosphor-react'
 import { ExternalLink } from '../../../../components/ExternalLink'
+import { api } from '../../../../lib/axios'
+import { useEffect, useState } from 'react'
+
+const userName = 'JGabriel12'
+
+interface ProfileData {
+  name: string
+  avatar_url: string
+  html_url: string
+  bio: string
+  login: string
+  company?: string
+  followers: number
+}
 
 export function Profile() {
+  const [profileData, setProfileData] = useState<ProfileData>({} as ProfileData)
+
+  async function getProfileData() {
+    const response = await api.get(`/users/${userName}`)
+
+    setProfileData(response.data)
+  }
+
+  useEffect(() => {
+    getProfileData()
+  }, [])
+
   return (
     <ProfileContainer>
-      <ProfilePicture src={AvatarImage} alt="Profile picture" />
+      <ProfilePicture src={profileData.avatar_url} alt="Profile picture" />
       <ProfileDescription>
         <header>
-          <h1>Cameron Williamson</h1>
+          <h1>{profileData.name}</h1>
 
           <div>
-            <ExternalLink text="github" href="#" />
+            <ExternalLink
+              text="github"
+              href={profileData.html_url}
+              target="blank"
+            />
           </div>
         </header>
 
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{profileData.bio}</p>
 
         <ul>
           <li>
-            <GithubLogo weight="fill" /> cameronwll
+            <GithubLogo weight="fill" /> {profileData.login}
           </li>
           <li>
-            <Buildings weight="fill" /> Rocketseat
+            <Buildings weight="fill" />{' '}
+            {profileData.company === null
+              ? 'Desempregado'
+              : profileData.company}
           </li>
           <li>
-            <Users weight="fill" /> 32 seguidores
+            <Users weight="fill" /> {profileData.followers} seguidores
           </li>
         </ul>
       </ProfileDescription>
