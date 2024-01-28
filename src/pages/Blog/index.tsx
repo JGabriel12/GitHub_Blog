@@ -12,6 +12,7 @@ export interface IssuePostProps {
   body: string
   created_at: string
   html_url: string
+  comments: string
   number: number
   user: {
     login: string
