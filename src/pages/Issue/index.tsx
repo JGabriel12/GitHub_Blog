@@ -29,7 +29,7 @@ export function Issue() {
   return (
     <>
       <IssueHeader issuePostContent={issuePostData} />
-      <IssueContent />
+      <IssueContent content={issuePostData.body} />
     </>
   )
 }
