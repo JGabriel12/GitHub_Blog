@@ -31,7 +31,11 @@ export function IssueHeader({ issuePostContent }: IssuePostHeaderProps) {
           icon={<CaretLeft />}
           text="Voltar"
         />
-        <ExternalLink text="Ver no GitHub" href="#" target="_blank" />
+        <ExternalLink
+          text="Ver no GitHub"
+          href={issuePostContent.html_url}
+          target="_blank"
+        />
       </header>
       <h1>{issuePostContent.title} </h1>
       <ul>
