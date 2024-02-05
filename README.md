@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+## GitHub Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
+This is a **React** application built using **TypeScript**, Vite, **Axios**, **React Router**, React Hook Form with Zod, Styled Components, and Moment.js for date formatting. The application consumes the GitHub API to display a blog-like interface, where the user's profile is dynamically fetched from GitHub data. Below the user profile, a list of issues from the selected repository is displayed. Users can click on an issue to view its detailed body and see the number of comments it has.
 
-Currently, two official plugins are available:
+<br>
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
 
-## Expanding the ESLint configuration
+- Dynamic fetching of user profile from GitHub data.
+- Displaying a list of issues from the selected repository.
+- Detailed view of an issue including its body and the number of comments.
+- Formatted dates using Moment.js.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br>
+<br>
 
-- Configure the top-level `parserOptions` property like this:
+### Technologies Used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- React: A JavaScript library for building user interfaces.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- Vite: A next-generation frontend tooling to develop React applications.
+- Axios: A promise-based HTTP client for making requests to the GitHub API.
+- React Router: A library for routing in React applications.
+- React Hook Form with Zod: A performant, flexible, and extensible forms library for React.
+- Styled Components: A library for styling React components using tagged template literals.
+- Moment.js: A JavaScript date library for parsing, validating, manipulating, and formatting dates.
+
+<br>
+<br>
+
+### Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/react-github-blog.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Navigate into the project directory:
+
+```
+cd react-github-blog
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Start the development server:
+
+```
+npm run dev
+```
+
+<br>
+
+#### Open your browser and navigate to http://localhost:3000 to view the application.
