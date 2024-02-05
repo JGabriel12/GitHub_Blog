@@ -1,12 +1,15 @@
+// Blog.tsx
 import { useEffect, useState } from 'react'
 import { api } from '../../lib/axios'
 import { IssuePost } from './components/IssuePost'
 import { Profile } from './components/Profile'
 import { SearchInput } from './components/SearchInput'
 import { PostsListContainer } from './style'
+import { Pagination } from '../../components/Pagination'
 
 const username = 'JGabriel12' // Pode usar .env
 const repoName = 'GitHub_Blog' // Pode usar .env
+
 export interface IssuePostProps {
   title: string
   body: string
@@ -21,6 +24,9 @@ export interface IssuePostProps {
 
 export function Blog() {
   const [issuePosts, setIssuePosts] = useState<IssuePostProps[]>([])
+  const [visiblePosts, setVisiblePosts] = useState<IssuePostProps[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 6
 
   async function getIssuePosts(query: string = '') {
     const response = await api.get(
@@ -34,6 +40,13 @@ export function Blog() {
     getIssuePosts()
   }, [])
 
+  useEffect(() => {
+    const lastPostIndex = currentPage * postsPerPage
+    const firstPostIndex = lastPostIndex - postsPerPage
+    const currentPosts = issuePosts.slice(firstPostIndex, lastPostIndex)
+    setVisiblePosts(currentPosts)
+  }, [issuePosts, currentPage])
+
   return (
     <>
       <Profile />
@@ -42,10 +55,15 @@ export function Blog() {
         postsLength={issuePosts.length}
       />
       <PostsListContainer>
-        {issuePosts.map(post => (
+        {visiblePosts.map(post => (
           <IssuePost key={post.number} post={post} />
         ))}
       </PostsListContainer>
+      <Pagination
+        data={issuePosts}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   )
 }

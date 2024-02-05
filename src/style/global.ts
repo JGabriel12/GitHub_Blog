@@ -22,7 +22,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button{
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+
+    &:focus {
+    outline: none;
+    box-shadow: none;
+  }
   }
 
   a{
