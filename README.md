@@ -1,7 +1,7 @@
 ## GitHub Blog
 
 <br>
-This is a **React** application built using **TypeScript**, Vite, **Axios**, **React Router**, React Hook Form with Zod, Styled Components, and Moment.js for date formatting. The application consumes the GitHub API to display a blog-like interface, where the user's profile is dynamically fetched from GitHub data. Below the user profile, a list of issues from the selected repository is displayed. Users can click on an issue to view its detailed body and see the number of comments it has.
+This is a React application built using TypeScript, Vite, Axios, React Router, React Hook Form with Zod, Styled Components, and Moment.js for date formatting. The application consumes the GitHub API to display a blog-like interface, where the user's profile is dynamically fetched from GitHub data. Below the user profile, a list of issues from the selected repository is displayed. Users can click on an issue to view its detailed body and see the number of comments it has.
 
 <br>
 <br>
@@ -35,13 +35,13 @@ This is a **React** application built using **TypeScript**, Vite, **Axios**, **R
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/react-github-blog.git
+git clone https://github.com/JGabriel12/GitHub_Blog
 ```
 
 2. Navigate into the project directory:
 
 ```
-cd react-github-blog
+cd GitHub_Blog
 ```
 
 3. Install dependencies:
@@ -58,4 +58,4 @@ npm run dev
 
 <br>
 
-#### Open your browser and navigate to http://localhost:3000 to view the application.
+#### Open your browser and navigate to http://localhost:5137 to view the application.
